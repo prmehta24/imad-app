@@ -17,22 +17,23 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
  
 });
-
-    var aone={
+var articles = {
+     'article-one':{
         title:'Article 1|Parimal mehta',
         heading:'Article 1',
         content:'Welcome to my first article.'
-    };
-    var atwo={
+    },
+     'article-two':{
         title:'Article 2|Parimal mehta',
         heading:'Article 2',
         content:'Welcome to my second article.'
-    };
-    var athree={
+    },
+    'article-three':{
         title:'Article 3|Parimal mehta',
         heading:'Article 3',
         content:'Welcome to my third article.'
-    };
+    }
+}
     function cTemp(data){
         title=data.title;
         heading=data.heading;
@@ -64,14 +65,9 @@ return htmlTemplate;
     
    
 
-app.get('/article-one', function (req, res) {
-  res.send(cTemp(aone));
-});
-app.get('/article-two', function (req, res) {
-  res.send(cTemp(atwo));
-});
-app.get('/article-three', function (req, res) {
-res.send(cTemp(athree));
+app.get('/articleName', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(cTemp(articles[articleName]));
 });
 
 
