@@ -19,4 +19,11 @@ body {
 .img-medium {
     height: 200px;
 }
-
+ div
+        {
+        color:blue;
+        max-width:600px;
+        margin: 0 auto;
+        padding:90px;
+        background:orange;
+        }
