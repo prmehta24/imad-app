@@ -23,7 +23,11 @@ app.get('/ui/madi.png', function (req, res) {
         heading:'Article 1',
         content:'Welcome to my first article.'
     };
-    var htmlTemplate={
+    function cTemp(data){
+        title=data.title;
+        heading=data.heading;
+        content=data.content;
+    var htmlTemplate=`
 <html>
     <head>
          <title>${title}</title>
@@ -43,13 +47,15 @@ app.get('/ui/madi.png', function (req, res) {
         </p>
         </div>
     </body>
-</html>
+</html>`;
+return htmlTemplate;
 
-    };
+    }
+    
    
 
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(cTemp(aone));
 });
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
