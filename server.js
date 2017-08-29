@@ -17,11 +17,37 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
  
 });
-//var articles = {
-    //aone={},
-   // atwo={},
-   // athree={}
-//};
+
+    var aone={
+        title:'Article 1|Parimal mehta',
+        heading:'Article 1',
+        content:'Welcome to my first article.'
+    };
+    var htmlTemplate={
+        <html>
+    <head>
+        <title>${title}</title>
+         <link href="/ui/style.css" rel="stylesheet" />
+         <meta name="viewport" content="width=device-width initial-scale=1"/>
+   
+    </head>
+    <body>
+         <div id="articles"><a href="/">Home</a>
+        <hr>
+        <h1>
+            ${heading}
+        </h1>
+        
+        <p>
+            ${content}
+        </p>
+        </div>
+    </body>
+</html>
+
+    };
+   
+
 app.get('/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
