@@ -24,9 +24,9 @@ app.get('/ui/madi.png', function (req, res) {
         content:'Welcome to my first article.'
     };
     var htmlTemplate={
-        <html>
+<html>
     <head>
-        <title>${title}</title>
+         <title>${title}</title>
          <link href="/ui/style.css" rel="stylesheet" />
          <meta name="viewport" content="width=device-width initial-scale=1"/>
    
