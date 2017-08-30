@@ -3,7 +3,7 @@ var img=document.getElementById('hasura');
 var marginL=0;
 function moveRight()
 {
-    marginL=marginL+5;
+    marginL=marginL+3;
     img.style.marginLeft=marginL+'px';
     
 }
