@@ -43,7 +43,7 @@
      if(request.status===200)
      {
          var names=request.responseText;
-         names=JSON.parse('names');
+         names=JSON.parse(names);
          var list='';
           
      
