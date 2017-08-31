@@ -72,6 +72,12 @@ return htmlTemplate;
     }
     
    
+var coms=[];
+app.get('/submit-name:name', function (req, res) {
+    var comm=req.params.name;
+    coms.push(comm);
+  res.send(JSON.stringify(coms));
+});
 
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
