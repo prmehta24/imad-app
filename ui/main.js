@@ -32,3 +32,17 @@
      request.send(null);
      
  };
+ var comInput=document.getElementById('com');
+ var comment=comInput.value;
+ var submit=document.getElementById('submitbtn');
+ submit.onclick=function()
+ {
+   var comments=['com 1','com 2','com 3'];  
+   var list='';
+   for(var i=0;i<comments.length;i++)
+   {
+       list+='<li>'+comments[i]+'</li>'
+   }
+   var ul=document.getElementById('commentlist');
+   ul.innerHTML=list;
+ };
