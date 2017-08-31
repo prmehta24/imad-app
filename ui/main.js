@@ -32,17 +32,17 @@
      request.send(null);
      
  };
- var comInput=document.getElementById('com');
- var comment=comInput.value;
+ var nameInput=document.getElementById('name');
+ var name=nameInput.value;
  var submit=document.getElementById('submitbtn');
  submit.onclick=function()
  {
-   var comments=['com 1','com 2','com 3'];  
+   var names=['com 1','com 2','com 3'];  
    var list='';
-   for(var i=0;i<comments.length;i++)
+   for(var i=0;i<names.length;i++)
    {
-       list+='<li>'+comments[i]+'</li>'
+       list+='<li>'+names[i]+'</li>'
    }
-   var ul=document.getElementById('commentlist');
+   var ul=document.getElementById('namelist');
    ul.innerHTML=list;
  };
