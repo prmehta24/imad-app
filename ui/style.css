@@ -16,6 +16,9 @@ body {
 .bold {
     font-weight: bold;
 }
+#info{
+    padding:100px;
+}
 
 .img-medium {
     height: 200px;
