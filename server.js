@@ -118,11 +118,12 @@ app.get('/articles/:articleName', function (req, res) {
             
             if(res.rows.length===0)
             {
-                res.send(res.rows.length);
-                res.status(404).send("Article Not Found");
+                
+                res.status(404).send('Article Not Found');
             }
             else
             {
+                res.send('in');
                 var articleData=res.rows[0];
                 res.send(cTemp(articleData));
             }
