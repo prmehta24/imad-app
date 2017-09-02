@@ -106,9 +106,9 @@ app.get('/submit-name', function (req, res) {
 
 app.get('/articles/:articleName', function (req, res) {
     
-    pool.query("SELECT * FROM article WHERE title= '" +req.params.articleName+ "'", function(err,result)
+    pool.query("SELECT * FROM article WHERE title= '" +req.params.articleName+ "'", function(err,res)
     {
-       res.send(req.params.articleName);
+       
         if(err)
         {
             res.status(500).send(err.toString());
@@ -119,11 +119,11 @@ app.get('/articles/:articleName', function (req, res) {
             if(res.rows.length===0)
             {
                 
-                res.send('Article Not Found');
+                res.status(404).send('Article Not Found');
             }
             else
             {
-                res.send('in');
+        
                 var articleData=res.rows[0];
                 res.send(cTemp(articleData));
             }
