@@ -105,7 +105,7 @@ app.get('/submit-name', function (req, res) {
 });
 
 app.get('/articles/:articleName', function (req, res) {
-    
+    res.send("In");
     pool.query("SELECT * FROM article WHERE title= '" +req.params.articleName+ "'", function(err,result)
     {
         if(err)
