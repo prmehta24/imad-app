@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/test-db', function (req, res) {
-    pool.query('SELECT * FROM test',function(err,result)
+    pool.query('SELECT * FROM article',function(err,result)
     {
         if(err)
         {
