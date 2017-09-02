@@ -115,9 +115,10 @@ app.get('/articles/:articleName', function (req, res) {
         }
         else
         {
-            res.send("In");
+            
             if(res.rows.length===0)
             {
+                res.send("In");
                 res.status(404).send("Article Not Found");
             }
             else
