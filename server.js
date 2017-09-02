@@ -118,7 +118,7 @@ app.get('/articles/:articleName', function (req, res) {
             
             if(res.rows.length===0)
             {
-                res.send("In");
+                res.send(res.rows.length);
                 res.status(404).send("Article Not Found");
             }
             else
