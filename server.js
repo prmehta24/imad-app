@@ -50,23 +50,7 @@ var counter=0;
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
  
 });
-var articles = {
-     'article-one':{
-        title:'Article 1|Parimal mehta',
-        heading:'Article 1',
-        content:'Welcome to my first article.'
-    },
-     'article-two':{
-        title:'Article 2|Parimal mehta',
-        heading:'Article 2',
-        content:'Welcome to my second article.'
-    },
-    'article-three':{
-        title:'Article 3|Parimal mehta',
-        heading:'Article 3',
-        content:'Welcome to my third article.'
-    }
-}
+
     function cTemp(data){
         title=data.title;
         heading=data.heading;
