@@ -43,7 +43,7 @@ app.get('/hash/:input',function(req,res)
 {
     var hashedString=(req.params.input,'random-string');
     res.send(hashedString);
-})
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
