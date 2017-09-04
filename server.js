@@ -29,7 +29,7 @@ function hash(input,salt)
 app.get('/hash/:input',function(req,res)
 {
     var hashedString=(req.params.input,'this-is-some-random-string');
-    res.send(hashedString);
+   // res.send(hashedString);
 });
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM article',function(err,result)
