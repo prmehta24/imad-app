@@ -80,6 +80,7 @@ app.post('/login',function(req,res){
                 var hashedPassword=hash(password,salt);
                 if(hashedPassword===dbString)
                 {
+                    req.session.auth={userId:result.rows[0].id};
                     res.send("Credentials Correct");
                 }
                 else
@@ -90,6 +91,17 @@ app.post('/login',function(req,res){
         }
         
     });
+});
+app.get('/check-login',function(req,res)
+{
+    if(req.session && req.session.auth && req.session.auth.userId)
+    {
+        res.send("You are logged in : "+req.session.auth.userId.toString());
+    }
+    else
+    {
+        res.send("You havent logged in.");
+    }
 });
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM article',function(err,result)
