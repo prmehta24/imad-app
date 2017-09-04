@@ -75,7 +75,7 @@
      {
      if(request.status===200)
      {
-         alert('Logged in succesfully');
+         alert('Logged in successfully');
          
      }
      else if(request.status===403)
