@@ -103,6 +103,11 @@ app.get('/check-login',function(req,res)
         res.send("You havent logged in.");
     }
 });
+app.get('/logout',function(req,res)
+{
+    delete req.session.auth;
+    res.send("Logged Out");
+})
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM article',function(err,result)
     {
