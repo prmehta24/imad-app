@@ -31,7 +31,7 @@ app.get('/test-db', function (req, res) {
         {
             res.send(JSON.stringify(result.rows));
         }
-    })
+    });
  
 });
 function hash(input,salt)
