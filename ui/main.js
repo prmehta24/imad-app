@@ -65,3 +65,35 @@
       request.open('GET','http://prmehta24.imad.hasura-app.io/submit-name?name='+name,true);
      request.send(null);
  };
+ //login
+ var submit2=document.getElementById('submit_btn');
+ submit2.onclick=function(){
+  var request = new XMLHttpRequest();
+     request.onreadystatechange=function()
+     {
+     if(request.readyState===XMLHttpRequest.DONE)
+     {
+     if(request.status===200)
+     {
+         alert('Logged in succesfully');
+         
+     }
+     else if(request.status===403)
+     {
+         alert('Credentials incorrect');
+     }
+     else if(request.status===500)
+     {
+         alert('Something went wrong');
+     }
+     }
+     };
+     var username=document.getElementById('username').value;
+     var password=document.getElementById('password').value;
+     console.log('username');
+     console.log('password');
+     
+      request.open('POST','http://prmehta24.imad.hasura-app.io/login',true);
+      request.setRequestHeader('Content-Type','application/json');
+     request.send(JSON.stringify({username:username,password:password}));
+ };
